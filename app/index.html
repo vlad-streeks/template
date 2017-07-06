@@ -16,6 +16,7 @@
 	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	<link rel="stylesheet" href="css/swiper.min.css">
 
 	<!-- Chrome, Firefox OS and Opera -->
 	<meta name="theme-color" content="#000">
@@ -52,7 +53,7 @@
 				</div>
 			</div>
 		</header>
-		<nav class="main_menu">
+		<nav class="main_menu" id="menu">
 			<li><a href="#advantages">наши преимущества</a></li>
 			<li><a href="#production">продукция</a></li>
 			<li><a href="#advantages">нам доверяют</a></li>
@@ -61,25 +62,36 @@
 		</nav>
 	</div>
 <div class="wrapper_main_gal">
-	<div class="content">
-		<div class="main_gal">
-			<img class="special" src="img/special.png" alt="special">
-			<form action="#" class="main_form">
-				<label>
-					<input type="text" id="name" name="name" placeholder="введите имя">
-				</label>
-				<label>
-					<input type="phone" name="phone" placeholder="введите телефон">
-				</label>
-				<label>
-					<input type="email" name="email" placeholder="введите email">
-				</label>
-				<label>
-					<input type="submit" value="получить оптовый прайс-лист">
-				</label>
-			</form>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img src="img/up_01_0.jpg" alt=""></div>
+			<div class="swiper-slide"><img src="img/up_02_0.jpg" alt=""></div>
+			<div class="swiper-slide"><img src="img/up_03_0.jpg" alt=""></div>
+			<div class="swiper-slide"><img src="img/up_04_0.jpg" alt=""></div>
+		</div>
+			<div class="content">
+				<!--<div class="main_gal">-->
+
+				<img class="special" src="img/special.png" alt="special">
+				<form action="#" class="main_form">
+					<label>
+						<input type="text" id="name" name="name" placeholder="введите имя">
+					</label>
+					<label>
+						<input type="phone" name="phone" placeholder="введите телефон">
+					</label>
+					<label>
+						<input type="email" name="email" placeholder="введите email">
+					</label>
+					<label>
+						<input type="submit" value="получить оптовый прайс-лист">
+					</label>
+				</form>
+				<!--</div>-->
+
 		</div>
 	</div>
+
 </div>
 <div class="wrapper_advantages">
 	<div class="content">
@@ -272,11 +284,11 @@
 		<div class="content" style="max-width: 1100px">
 			<h2>сертификаты</h2>
 			<div class="sertificats_flex">
-				<img src="img/sertif1.jpg" alt="">
-				<img src="img/sertif2.jpg" alt="">
-				<img src="img/sertif3.jpg" alt="">
-				<img src="img/sertif4.jpg" alt="">
-				<img src="img/sertif5.jpg" alt="">
+				<a data-fancybox="gallery" href="img/sertif1.jpg"><img src="img/sertif1.jpg"></a>
+				<a data-fancybox="gallery" href="img/sertif2.jpg"><img src="img/sertif2.jpg"></a>
+				<a data-fancybox="gallery" href="img/sertif3.jpg"><img src="img/sertif3.jpg"></a>
+				<a data-fancybox="gallery" href="img/sertif4.jpg"><img src="img/sertif4.jpg"></a>
+				<a data-fancybox="gallery" href="img/sertif5.jpg"><img src="img/sertif4.jpg"></a>
 			</div>
 		</div>
 	</div>
@@ -332,6 +344,41 @@
 
 
 	<link rel="stylesheet" href="css/main.min.css">
+	<script src="js/swiper.min.js"></script>
 	<script src="js/scripts.min.js"></script>
+
+	<script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            paginationClickable: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: 5000,
+            speed: 1200,
+            autoplayDisableOnInteraction: false
+        });
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+	<script>
+        $(document).ready(function(){
+            $("#menu").on("click","a", function (event) {
+                //отменяем стандартную обработку нажатия по ссылке
+                event.preventDefault();
+
+                //забираем идентификатор бока с атрибута href
+                var id  = $(this).attr('href'),
+
+                    //узнаем высоту от начала страницы до блока на который ссылается якорь
+                    top = $(id).offset().top;
+
+                //анимируем переход на расстояние - top за 1500 мс
+                $('body,html').animate({scrollTop: top}, 1500);
+            });
+        });
+	</script>
 </body>
 </html>

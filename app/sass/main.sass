@@ -164,9 +164,9 @@ h3
 	width: 100%
 	background-color: #463f45
 	overflow: hidden
-	background-image: url(../img/main_gal_bg.jpg)
-	background-position: 50% 50%
-	background-size: cover
+	//background-image: url(../img/main_gal_bg.jpg)
+	//background-position: 50% 50%
+	//background-size: cover
 	box-shadow: 0px 2px 30px 2px rgba(0,0,0,1)
 .main_gal
 	padding: 85px 0 50px 0
@@ -212,8 +212,9 @@ form.main_form
 	background-image: url(../img/line.png), url(../img/fig_bg_black.png)
 	background-repeat: repeat-x, repeat-x
 	background-position: 0px 120px, 0px 0px
-	overflow: hidden
+	//overflow: hidden
 	position: relative
+	padding-bottom: 100px
 	//&:after
 	//	content: ""
 	//	position: absolute
@@ -287,12 +288,14 @@ form.main_form
 			background-color: #7c7d7d
 .wrapper_graduates
 	background-color: #979dad
-	overflow: hidden
+	//overflow: hidden
 	background-image: url(../img/line.png)
 	background-repeat: repeat-x
 	background-position: 0px 133px
+	padding-bottom: 100px
+	position: relative
 	.main_form
-		margin-bottom: 100px
+		//margin-bottom: 100px
 .graduates
 	padding: 110px 0 0 0
 	h2
@@ -389,7 +392,7 @@ form.main_form
 	background-image: url(../img/line.png)
 	background-repeat: repeat-x
 	background-position: 0px 133px
-
+	position: relative
 	h2
 		width: 430px
 		background-color: inherit
@@ -434,8 +437,11 @@ form.main_form
 	width: 100%
 	display: flex
 	justify-content: space-around
-	flex-wrap: wrap
 	margin-bottom: 80px
+	a
+		display: block
+		img
+			width: 100%
 .contacts_wrap
 	width: 820px
 	margin: 0 auto
@@ -461,5 +467,53 @@ form.main_form
 	width: 100%
 	height: 179px
 	background-image: url(../img/bg_footer.jpg)
+
+
+
+
+
+
+swiper-container
+	width: 100%
+	position: relative
+swiper-slide
+	img
+		width: 100%
+.swiper-container
+	.content
+		position: absolute
+		top: 100px
+		left: 25%
+		z-index: 9999
+		img.special
+			margin-bottom: 240px
+
+.wrapper_production:after
+	content: ""
+	position: absolute
+	background-image: url(../img/arrow_down.jpg)
+	width: 280px
+	height: 94px
+	bottom: -59px
+	left: 43%
+	z-index: 999
+.wrapper_graduates:after
+	content: ""
+	position: absolute
+	background-image: url(../img/arrow_down2.jpg)
+	width: 280px
+	height: 94px
+	bottom: -57px
+	left: 43%
+.smoking:before
+	content: ""
+	position: absolute
+	background-image: url(../img/arrow_down3.jpg)
+	width: 280px
+	height: 94px
+	top: -36px
+	left: 43%
+
+
 @import "media"
 // Всегда в конце
